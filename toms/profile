@@ -1,0 +1,45 @@
+#!bin/bash
+export unline_path=/home/zxhtom/unline
+export unline_path=/home/zxhtom/unline
+export PYTHONPATH=${HOME}/.local/python
+export system_password=025025
+export root_password=025025
+alias pbcopy='xsel --clipboard --input'
+alias pbpaste='xsel --clipboard --output'
+unalias ls
+alias ls='colorls'
+export JAVA_DEFAULT_HOME=/opt/soft/java/default
+if [[ -z $JAVA_HOME ]];then
+echo "set default jdk ${JAVA_DEFAULT_HOME}"
+export JAVA_HOME=${JAVA_DEFAULT_HOME}
+fi
+export JRE_HOME=${JAVA_HOME}/jre
+export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib
+export PATH=${JAVA_HOME}/bin:${PATH}:${HOME}/.local/bin
+JAVA_default_HOME=/opt/soft/java/default
+alias default="export JAVA_HOME=$JAVA_default_HOME;source /home/zxhtom/.zshrc"
+JAVA_jdk11_HOME=/opt/soft/java/jdk11
+alias jdk11="export JAVA_HOME=$JAVA_jdk11_HOME;source /home/zxhtom/.zshrc"
+JAVA_jdk17_HOME=/opt/soft/java/jdk17
+alias jdk17="export JAVA_HOME=$JAVA_jdk17_HOME;source /home/zxhtom/.zshrc"
+JAVA_jdk19_HOME=/opt/soft/java/jdk19
+alias jdk19="export JAVA_HOME=$JAVA_jdk19_HOME;source /home/zxhtom/.zshrc"
+JAVA_jdk8_HOME=/opt/soft/java/jdk8
+alias jdk8="export JAVA_HOME=$JAVA_jdk8_HOME;source /home/zxhtom/.zshrc"
+export MAVEN_HOME=/opt/soft/maven
+export M2_HOME=/opt/soft/maven
+export PATH=${MAVEN_HOME}/bin:${PATH}
+export NODE_LIB_HOME=${HOME}/env/node/node_global
+export PATH=${NODE_LIB_HOME}/bin:${PATH}
+export CLIPBOARD=${HOME}/.config/clip
+export PATH=${CLIPBOARD}:${PATH}
+alias task='asynctask -f'
+bindkey -s '\e[15~' 'task\n'
+export KAFKA_CLIENT_HOME=/opt/soft/client/kafka/
+export PATH=${KAFKA_CLIENT_HOME}/bin:${PATH}
+export REDIS_CLIENT_HOME=/opt/soft/client/redis/redis-stack-server-6.2.4-v3
+export PATH=${REDIS_CLIENT_HOME}/bin:${PATH}
+export ZOOKEEPER_CLIENT_HOME=/opt/soft/client/zookeeper/
+export PATH=${ZOOKEEPER_CLIENT_HOME}/bin:${PATH}
+export SUDO_ASKPASS=/usr/bin/ksshaskpass
+export unline_path=/home/zxhtom/unline
