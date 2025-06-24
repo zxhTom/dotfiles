@@ -6,7 +6,6 @@ opts = {
   accept_key = '<Down>',
   reject_key = '<Up>',
 }
-print(vim.inspect(opts))
 wilder.setup(opts)
 wilder.set_option('pipeline', {
   wilder.branch(
