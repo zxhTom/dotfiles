@@ -1,5 +1,6 @@
 return {
-  "AstroNvim/astrocore",
+  "zxhTom/astrocore",
+  branch = "feat/which-key-compatibility",
   lazy = false, -- disable lazy loading
   priority = 10000, -- load AstroCore first
   opts = require("config.astrocore"),
