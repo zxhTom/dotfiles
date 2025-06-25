@@ -5,7 +5,6 @@ lvim.plugins = {}
 for _, file in ipairs(plugin_files) do
   local plugin_name = file:match("([^/]+)%.lua$")
   if lvim.toms and lvim.toms.plugins[plugin_name] and lvim.toms.plugins[plugin_name].enabled then
-    print(plugin_name)
     local rel_path = file:match(".*lua/(.-)%.lua$")
     package.loaded[rel_path] = nil  -- 清除缓存
     local ok, plugin = pcall(require, rel_path)

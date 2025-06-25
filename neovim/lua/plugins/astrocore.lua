@@ -3,5 +3,8 @@ return {
   branch = "feat/which-key-compatibility",
   lazy = false, -- disable lazy loading
   priority = 10000, -- load AstroCore first
-  opts = require("config.astrocore"),
+  -- opts = require("config.astrocore"),
+  config = function()
+    require "utils.import".all("astrocore")
+  end,
 }
