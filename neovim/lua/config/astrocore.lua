@@ -1,6 +1,5 @@
 local loader = require "utils.config_loader"
 local opts, loaded_keyboards = loader.load_configs("keyboards")
--- print("Loaded mappings:", vim.inspect(loaded_keyboards))
   -- 显式传递正确的 bufnr
 astrocore = require("astrocore")
 if astrocore then

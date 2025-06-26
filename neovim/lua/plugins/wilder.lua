@@ -5,4 +5,5 @@ return{
     -- config goes here
     require('utils.import').all("wilder")
   end,
+  enabled=lvim.toms.plugins.wilder.enabled or false,
 }

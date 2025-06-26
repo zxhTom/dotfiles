@@ -1,3 +1,4 @@
+_G.lvim = _G.lvim or {}
 lvim.toms = {
   plugins = {
     ["astrocore"] = { enabled = true },
@@ -11,7 +12,7 @@ lvim.toms = {
     ["lazygit"] = { enabled = true },
     ["leap"] = { enabled = true },
     ["lspsaga"] = { enabled = true },
-    ["monokai"] = { enabled = true },
+    ["monokai"] = { enabled = false },
     ["neogen"] = { enabled = true },
     ["nvim-gmove"] = { enabled = true },
     ["nvim-jdtl"] = { enabled = true },
@@ -25,7 +26,12 @@ lvim.toms = {
     ["undotree"] = { enabled = true },
     ["vim-tmux-navigator"] = { enabled = true },
     ["vim-translator"] = { enabled = true },
+    ["kanagawa"] = { enabled = true },
     ["vscode"] = { enabled = true },
     ["wilder"] = { enabled = true },
+    ["showkeys"] = { enabled = false },
+    ["oil"] = { enabled = true },
+    ["statusline"] = { enabled = true },
+    ["noice"] = { enabled = true },
   }
 }
