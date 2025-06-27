@@ -21,5 +21,8 @@ return{
     },
     config = true,
     enabled=lvim.toms.plugins.oil.enabled or false,
+    config = function()
+      require("utils.import").all("oilgitstatus")
+    end
   }
 }

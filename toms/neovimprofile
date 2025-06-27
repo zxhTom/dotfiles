@@ -1,2 +1,1 @@
 alias nvim11="NVIM_APPNAME=nvim11 VIMRUNTIME=/home/zxhtom/temp/neovim/nvim11/share/nvim/runtime /home/zxhtom/temp/neovim/nvim11/bin/nvim"
-alias nvim33="NVIM_APPNAME=nvim33 VIMRUNTIME=/home/zxhtom/temp/neovim/nvim11/share/nvim/runtime /home/zxhtom/temp/neovim/nvim11/bin/nvim"

@@ -9,7 +9,8 @@ kanagawa.setup({
             ["@markup.raw.markdown_inline"] = { link = "String" }, -- `code`
             ["@markup.list.markdown"] = { link = "Function" }, -- + list
             ["@markup.quote.markdown"] = { link = "Error" }, -- > blockcode
-            ["@markup.list.checked.markdown"] = { link = "WarningMsg" } -- - [X] checked list item
+            ["@markup.list.checked.markdown"] = { link = "WarningMsg" }, -- - [X] checked list item
+	    OilGitStatus = { fg = colors.palette.fujiWhite, bg = colors.palette.sumiInk0 },
         }
     end
 })
