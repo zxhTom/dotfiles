@@ -6,8 +6,16 @@ if [[ ! -d ${HOME}/.config/lvim/lua ]]
 then
   mkdir -p ${HOME}/.config/lvim/lua
 fi
-xstow -v -t ~/.config/nvim neovim -f 
-xstow -v -d neovim -t ~/.config/lvim/lua lua -f 
-xstow -v -t ~ zsh -f 
-xstow -v -t ~ tmux -f 
-xstow -v -t ~/.zxhtom toms -f 
+# check weather you provided xstow , it first , if you not , i will use stowsh ,refuse use stow
+replace_flag="-f"
+if [[ -z $(which xstow) ]]
+then
+  echo "xstow not found, using stowsh instead"
+  replace_flag="-s"
+  alias xstow=stowsh
+fi
+xstow -v -t ~/.config/nvim neovim ${replace_flag}
+xstow -v -d neovim -t ~/.config/lvim/lua lua ${replace_flag}
+xstow -v -t ~ zsh ${replace_flag} 
+xstow -v -t ~ tmux ${replace_flag} 
+xstow -v -t ~/.zxhtom toms ${replace_flag} 
