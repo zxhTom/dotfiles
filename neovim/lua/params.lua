@@ -1,4 +1,5 @@
 _G.lvim = _G.lvim or {}
+_G.toms = _G.toms or {}
 lvim.toms = {
   plugins = {
     -- theme
