@@ -7,3 +7,4 @@ vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold" }, {
 })
 
 require('core.autocmds')
+vim.cmd.colorscheme("catppuccin") -- 直接启用主题
