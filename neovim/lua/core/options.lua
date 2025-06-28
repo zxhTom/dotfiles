@@ -1,4 +1,6 @@
 local os = require'utils.system'.get_os()
+-- remeber the path you opened , i can cordinate back to it
+_G.NVIM_INITIAL_PATH = vim.fn.expand("%:p:h")
 -- 禁用 netrw（使用 Telescope 的文件浏览器替代）
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
