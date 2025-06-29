@@ -13,6 +13,11 @@ vim.opt.tabstop = 2       -- 1个Tab显示为2个空格
 vim.opt.shiftwidth = 2    -- 自动缩进使用的空格数
 vim.opt.softtabstop = 2   -- 编辑时Tab键插入的空格数
 vim.opt.expandtab = true  -- 将Tab转换为空格
+vim.opt.smartindent = true
+vim.opt.termguicolors = true
+
+vim.opt.number = true  -- show line numbers
+vim.opt.relativenumber = true -- show relative line numbers
 
 -- copy system settings
 if os == 'windows' then

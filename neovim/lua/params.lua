@@ -23,7 +23,7 @@ toms = {
     ["goto-preview"] = { enabled = true },
     ["lazygit"] = { enabled = true },
     ["leap"] = { enabled = true },
-    ["lspsaga"] = { enabled = true },
+    ["lspsaga"] = { enabled = false },
     ["neogen"] = { enabled = true },
     ["nvim-gmove"] = { enabled = true },
     ["nvim-jdtl"] = { enabled = true },
@@ -44,7 +44,7 @@ toms = {
     ["noice"] = { 
       enabled = true,
       cmdline = {
-        enabled = false,  -- 启用命令行
+        enabled = true,  -- 启用命令行
       },
     },
     ["minifile"] = { 
