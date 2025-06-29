@@ -16,5 +16,5 @@ return {
   config = function()
     require'utils.import'.all('noice')
   end,
-  enabled=lvim.toms.plugins.noice.enabled or false
+  enabled=toms.plugins.noice.enabled or false
 }

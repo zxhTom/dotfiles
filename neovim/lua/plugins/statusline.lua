@@ -4,5 +4,5 @@ return {
   opts={
 
   },
-	enabled=lvim.toms.plugins.statusline.enabled or false,
+	enabled=toms.plugins.statusline.enabled or false,
 }

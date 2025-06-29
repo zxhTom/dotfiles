@@ -8,5 +8,5 @@ return {
     config = function()
       require'utils.import'.all("showkeys")
     end,
-    enabled=lvim.toms.plugins.showkeys.enabled,
+    enabled=toms.plugins.showkeys.enabled,
 }

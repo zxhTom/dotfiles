@@ -5,6 +5,6 @@ return {
     config = function()
       require('utils.import').all("lualine")
     end,
-    enabled = lvim.toms.plugins.lualine.enabled or false
+    enabled = toms.plugins.lualine.enabled or false
   }
 }

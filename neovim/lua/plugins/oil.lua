@@ -12,7 +12,7 @@ return{
     config = function()
       require("utils.import").all("oil")
     end,
-    enabled=lvim.toms.plugins.oil.enabled or false
+    enabled=toms.plugins.oil.enabled or false
   },
   {
     "refractalize/oil-git-status.nvim",
@@ -20,7 +20,7 @@ return{
       "stevearc/oil.nvim",
     },
     config = true,
-    enabled=lvim.toms.plugins.oil.enabled or false,
+    enabled=toms.plugins.oil.enabled or false,
     config = function()
       require("utils.import").all("oilgitstatus")
     end

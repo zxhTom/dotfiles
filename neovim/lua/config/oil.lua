@@ -74,6 +74,9 @@ require("oil").setup({
     ["gx"] = "actions.open_external",
     ["g."] = { "actions.toggle_hidden", mode = "n" },
     ["g\\"] = { "actions.toggle_trash", mode = "n" },
+    ["h"] = {"actions.parent",mode="n"},
+    ["l"] = {"actions.select",mode="n"},
+
   },
   -- Set to false to disable all of the above keymaps
   use_default_keymaps = true,
@@ -194,10 +197,6 @@ require("oil").setup({
   -- Configuration for the floating SSH window
   ssh = {
     border = "rounded",
-  },
-  keymaps = {
-    ["h"] = "actions.parent",
-    ["l"] = "actions.select"
   },
   -- Configuration for the floating keymaps help window
   keymaps_help = {

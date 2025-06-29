@@ -10,7 +10,7 @@ M.setup = function(module)
 end
 M.keyboards = function(module)
   local subModuleName = "keyboards." .. module
-  if toms[subModuleName] then return end
+  if toms.loaded[subModuleName] then return end
   if not file.module_exists_vim("keyboards." .. module) then
     return
   end

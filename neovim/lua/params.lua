@@ -1,6 +1,6 @@
-_G.lvim = _G.lvim or {}
 _G.toms = _G.toms or {}
-lvim.toms = {
+toms = {
+  loaded={},
   plugins = {
     -- theme
     ["monokai"] = { enabled = true },
@@ -42,5 +42,9 @@ lvim.toms = {
     ["showkeys"] = { enabled = false },
     ["oil"] = { enabled = true },
     ["noice"] = { enabled = true },
+    ["minifile"] = { 
+      enabled = true ,
+      show_hidden=false,
+    },
   }
 }

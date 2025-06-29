@@ -7,5 +7,5 @@ return {
   config = function()
     require "utils.import".all("astrocore")
   end,
-  enabled = lvim.toms.plugins.astrocore.enabled,
+  enabled = toms.plugins.astrocore.enabled,
 }

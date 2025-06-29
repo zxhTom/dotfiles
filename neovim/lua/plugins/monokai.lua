@@ -1,1 +1,1 @@
-return { "tanvirtin/monokai.nvim",enabled=lvim.toms.plugins.monokai.enabled or false }
+return { "tanvirtin/monokai.nvim",enabled=toms.plugins.monokai.enabled or false }

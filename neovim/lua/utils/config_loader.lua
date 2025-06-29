@@ -4,10 +4,11 @@ local M = {}
 -- 安全加载 Lua 模块
 local function safe_require(name)
   -- 检查模块是否已加载 , avoid circle load
-  if toms[name] then return end
-  toms[name] = true
-  local ok, mod = pcall(require, name)
-  return ok and mod or nil
+  if toms.loaded[name] then return end
+  toms.loaded[name] = true
+  -- local ok, mod = pcall(require, name)
+  -- return ok and mod or nil
+  require(name)
 end
 
 -- 递归合并表格（深度合并）
