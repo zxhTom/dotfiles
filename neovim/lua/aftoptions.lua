@@ -6,5 +6,9 @@ vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold" }, {
   command = "checktime",
 })
 
-require('core.autocmds')
+-- require('core.autocmds')
+local loader = require "utils.config_loader"
+local opts, loaded_keyboards = loader.load_configs("core.autocmds")
+
 vim.cmd.colorscheme("catppuccin") -- 直接启用主题
+

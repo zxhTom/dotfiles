@@ -31,7 +31,6 @@ function M.load_configs(dir_path)
   -- 扫描 lua 目录
   local config_dir = vim.fn.stdpath("config") .. "/lua/" .. dir_path:gsub("%.", "/")
   local files = vim.fn.glob(config_dir .. "/*.lua", false, true)
-
   for _, file in ipairs(files) do
     -- 提取模块名（去掉路径和扩展名）
     local module = file:match(".*/([^/]+)%.lua$")

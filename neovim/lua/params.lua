@@ -41,7 +41,12 @@ toms = {
     ["wilder"] = { enabled = true },
     ["showkeys"] = { enabled = false },
     ["oil"] = { enabled = true },
-    ["noice"] = { enabled = true },
+    ["noice"] = { 
+      enabled = true,
+      cmdline = {
+        enabled = false,  -- 启用命令行
+      },
+    },
     ["minifile"] = { 
       enabled = true ,
       show_hidden=false,
