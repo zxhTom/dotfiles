@@ -10,19 +10,25 @@ require("mason").setup({
 
 
 require("mason-lspconfig").setup({
+  automatic_enable = false,
   -- ensure_installed = {
   --   "jdtls", "pyright", "bashls", "lua_ls",
   --   "clangd", "gopls", "rust_analyzer",
   --   "html", "cssls", "tailwindcss",
   --   "jsonls", "marksman", "yamlls"
   -- },
-  handlers = {
-    -- 其他 LSP 的配置...
-    ["lua_ls"] = nil,  -- 关键：禁用对 lua_ls 的自动配置
-  },
-  automatic_installation = {
-    exclude = { "lua_ls" }  -- 彻底排除
-  }
+  -- handlers = {
+  --   -- 其他 LSP 的配置...
+  --   ["lua_ls"] = nil,  -- 关键：禁用对 lua_ls 的自动配置
+  -- },
+  automatic_installation = true,
+  -- automatic_enable = {
+  --   exclude = {
+  --       "lua_ls",
+  --       "rust_analyzer",
+  --       "ts_ls"
+  --   }
+  -- }
 })
 
 
@@ -45,3 +51,5 @@ null_ls.setup({
   end,
 })
 
+
+require("config.mason.tool_installer")
