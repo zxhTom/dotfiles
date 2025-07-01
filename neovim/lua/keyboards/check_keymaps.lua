@@ -6,4 +6,3 @@ vim.keymap.set("n", "<leader>?", check_keys.interactive_check, {
   desc = "检查快捷键冲突"
 })
 
-vim.keymap.set("i", "jk", "<C-j>", { desc = "exit edit mode" })

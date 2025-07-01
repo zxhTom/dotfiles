@@ -1,3 +1,4 @@
+-- oil autocmd , theme settings
 -- 在你的 init.lua 中添加
 local function configure_oil_highlights()
   local colors = require("kanagawa.colors").setup()

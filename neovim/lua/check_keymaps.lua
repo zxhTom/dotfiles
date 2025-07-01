@@ -25,7 +25,7 @@ function M.interactive_check()
           ))
         end
       end
-      vim.notify(msg, vim.log.levels.WARN, {
+      vim.notify(vim.inspect(msg), vim.log.levels.WARN, {
         title = "快捷键冲突",
         timeout = 8000,  -- 延长显示时间
       })
