@@ -6,6 +6,7 @@ require("CopilotChat").setup(
         accept_word = "<C-right>", -- 接受当前单词
         accept_line = "<C-down>", -- 接受当前行
       }
-    }
+    },
+    enabled = toms.plugins["copilotchat"].enabled or false
   }
 )

@@ -78,4 +78,5 @@ copilot.setup({
     custom_server_filepath = nil,
   },
   server_opts_overrides = {},
+  enabled = toms.plugins["copilot"].enabled or false
 })
