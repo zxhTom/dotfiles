@@ -1,4 +1,9 @@
 -- NOTE: LSP Keybinds
+-- import mason_lspconfig plugin
+local mason_lspconfig = require("mason-lspconfig")
+-- Setup servers
+local lspconfig = require("lspconfig")
+local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
 vim.api.nvim_create_autocmd("LspAttach", {
   group = vim.api.nvim_create_augroup("UserLspConfig", {}),
@@ -74,97 +79,23 @@ vim.diagnostic.config({
 -- Moved back from mason_lspconfig.setup_handlers from mason.lua file
 -- as mason setup_handlers is deprecated & its causing issues with lsp settings
 --
--- Setup servers
-local lspconfig = require("lspconfig")
-local cmp_nvim_lsp = require("cmp_nvim_lsp")
 local capabilities = cmp_nvim_lsp.default_capabilities()
 
 -- Config lsp servers here
--- lua_ls
-lspconfig.lua_ls.setup({
-    capabilities = capabilities,
-    settings = {
-        Lua = {
-            diagnostics = {
-                globals = { "vim" },
-            },
-            completion = {
-                callSnippet = "Replace",
-            },
-            workspace = {
-                library = {
-                    [vim.fn.expand("$VIMRUNTIME/lua")] = true,
-                    [vim.fn.stdpath("config") .. "/lua"] = true,
-                },
-            },
-        },
-    },
-})
--- emmet_ls
-lspconfig.emmet_ls.setup({
-    capabilities = capabilities,
-    filetypes = {
-        "html",
-        "typescriptreact",
-        "javascriptreact",
-        "css",
-        "sass",
-        "scss",
-        "less",
-        "svelte",
-    },
-})
 
--- emmet_language_server
-lspconfig.emmet_language_server.setup({
-    capabilities = capabilities,
-    filetypes = {
-        "css",
-        "eruby",
-        "html",
-        "javascript",
-        "javascriptreact",
-        "less",
-        "sass",
-        "scss",
-        "pug",
-        "typescriptreact",
-    },
-    init_options = {
-        includeLanguages = {},
-        excludeLanguages = {},
-        extensionsPath = {},
-        preferences = {},
-        showAbbreviationSuggestions = true,
-        showExpandedAbbreviation = "always",
-        showSuggestionsAsSnippets = false,
-        syntaxProfiles = {},
-        variables = {},
-    },
-})
-
--- denols
-lspconfig.denols.setup({
-    capabilities = capabilities,
-    root_dir = lspconfig.util.root_pattern("deno.json", "deno.jsonc"),
-})
-
--- ts_ls (replaces tsserver)
-lspconfig.ts_ls.setup({
-    capabilities = capabilities,
-    root_dir = function(fname)
-        local util = lspconfig.util
-        return not util.root_pattern("deno.json", "deno.jsonc")(fname)
-            and util.root_pattern("tsconfig.json", "package.json", "jsconfig.json", ".git")(fname)
-    end,
-    single_file_support = false,
-    init_options = {
-        preferences = {
-            includeCompletionsWithSnippetText = true,
-            includeCompletionsForImportStatements = true,
-        },
-    },
-})
+local loader = require "utils.config_loader"
+local files = loader.load_files("config.lsp.servers")
+for _, file in ipairs(files) do
+  local filename = vim.fn.fnamemodify(file, ":t") -- ":t" 表示尾部文件名
+  local server_name = filename:gsub("%.[^%.]+$", "")
+  local ok, config = pcall(require, "config.lsp.servers." .. server_name:gsub("-", "_"))
+  if ok then
+    config = vim.tbl_deep_extend("force", {
+      capabilities = capabilities,
+    }, config)
+    lspconfig[server_name].setup(config)
+  end
+end
 
 
 
