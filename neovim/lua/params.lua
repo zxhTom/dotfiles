@@ -14,8 +14,8 @@ toms = {
     ["lualine"] = { enabled = true },
 
     ["astrocore"] = { enabled = true },
-    ["copilotchat"] = { enabled = true },
-    ["copilot"] = { enabled = true },
+    ["copilotchat"] = { enabled = false },
+    ["copilot"] = { enabled = false },
     ["dap-python"] = { enabled = true },
     ["flit"] = { enabled = true },
     ["formatter"] = { enabled = true },
@@ -23,6 +23,10 @@ toms = {
     ["goto-preview"] = { enabled = true },
     ["lazygit"] = { enabled = true },
     ["leap"] = { enabled = true },
+    ["lspconfig"] = { 
+      enabled = false ,
+      custom = false,
+    },
     ["lspsaga"] = { enabled = false },
     ["neogen"] = { enabled = true },
     ["nvim-gmove"] = { enabled = true },
