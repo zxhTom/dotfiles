@@ -8,7 +8,7 @@ local function safe_require(name)
   toms.loaded[name] = true
   -- local ok, mod = pcall(require, name)
   -- return ok and mod or nil
-  require(name)
+  return require(name)
 end
 
 -- 递归合并表格（深度合并）
@@ -21,6 +21,15 @@ local function deep_merge(t1, t2)
     end
   end
   return t1
+end
+
+
+-- 加载并合并目录下的所有配置
+function M.load_files(dir_path)
+  -- 扫描 lua 目录
+  local config_dir = vim.fn.stdpath("config") .. "/lua/" .. dir_path:gsub("%.", "/")
+  local files = vim.fn.glob(config_dir .. "/*.lua", false, true)
+  return files
 end
 
 -- 加载并合并目录下的所有配置
@@ -42,6 +51,7 @@ function M.load_configs(dir_path)
         table.insert(scanned_files, mod_path)
       end
     end
+    return merged
   end
 
   return merged, scanned_files
