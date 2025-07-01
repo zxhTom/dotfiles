@@ -51,7 +51,6 @@ function M.load_configs(dir_path)
         table.insert(scanned_files, mod_path)
       end
     end
-    return merged
   end
 
   return merged, scanned_files
