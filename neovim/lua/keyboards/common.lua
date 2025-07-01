@@ -7,5 +7,6 @@ end
 
 vim.keymap.set("n", "<leader>qn", function() safe_cmd("q","Exit Issue") end, { desc = "Quit current window" })
 vim.keymap.set("n", "<leader>qa", ":qall<CR>", { desc = "Quit current window" })
+vim.keymap.set("i", "jk", "<esc>", { desc = "exit edit mode" })
 
 vim.keymap.set("n", "<leader>qe", vim.diagnostic.open_float, { desc = "显示诊断信息" })
