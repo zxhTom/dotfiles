@@ -1,4 +1,9 @@
     require('mini.files').setup({
+      mappings = {
+        synchronize = 'w',
+        add='a',
+      },
+      auto_synchronize = true,
       -- Customization of shown content
       content = {
         -- Predicate for which file system entries to show
