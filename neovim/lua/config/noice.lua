@@ -46,3 +46,15 @@ require("noice").setup({
 		lsp_doc_border = false, -- add a border to hover docs and signature help
 	},
 })
+-- 修复 NotifyBackground 并配置 nvim-notify
+vim.api.nvim_set_hl(0, 'NotifyBackground', {
+  bg = '#1e222a',
+  fg = '#abb2bf',
+  blend = 15,
+})
+
+require('notify').setup({
+  background_colour = '#1e222a',
+  stages = 'fade_in_slide_out',
+  timeout = 3000,
+})
