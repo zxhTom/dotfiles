@@ -19,4 +19,4 @@ xstow -v -d neovim -t ~/.config/lvim/lua lua ${replace_flag}
 xstow -v -t ~ zsh ${replace_flag} 
 xstow -v -t ~ tmux ${replace_flag} 
 xstow -v -t ~/.zxhtom toms ${replace_flag} 
-# why git status *1
+# why git status *1 , I Dont know
