@@ -18,3 +18,4 @@ vim.keymap.set("n", "<leader>sh", function()
 	safe_cmd("split", "horizaontally")
 end, { desc = "[S]plit [H]orizaontally" })
 vim.keymap.set("n", "<leader>sv", "<CMD>vsplit<CR>", { desc = "[VS]plit [H]orizaontally" })
+
