@@ -1,5 +1,5 @@
 local map = vim.api.nvim_set_keymap
-map("n", "`<S-h>", "<Plug>GoNSMLeft", {})
+map("n", "<S-h>", "<Plug>GoNSMLeft", {})
 map("n", "<S-j>", "<Plug>GoNSMDown", {})
 map("n", "<S-k>", "<Plug>GoNSMUp", {})
 map("n", "<S-l>", "<Plug>GoNSMRight", {})

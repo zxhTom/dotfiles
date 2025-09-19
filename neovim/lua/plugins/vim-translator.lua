@@ -1,5 +1,6 @@
 return {
-  'voldikss/vim-translator',
+  'uga-rosa/translate.nvim',
+  cmd = { "Translate", "TranslateReplace" },
   config = function()
     require('utils.import').all("vim-translator")
   end,

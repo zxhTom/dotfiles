@@ -19,3 +19,31 @@ vim.keymap.set("n", "<leader>sh", function()
 end, { desc = "[S]plit [H]orizaontally" })
 vim.keymap.set("n", "<leader>sv", "<CMD>vsplit<CR>", { desc = "[VS]plit [H]orizaontally" })
 
+-- 带描述的映射
+vim.keymap.set('n', '<leader>bn', ':bnext<CR>', { desc = 'Next buffer' })
+vim.keymap.set('n', '<leader>bp', ':bprevious<CR>', { desc = 'Previous buffer' })
+
+-- 快速跳转到首尾
+vim.keymap.set('n', '<leader>bf', ':bfirst<CR>', { desc = 'First buffer' })
+vim.keymap.set('n', '<leader>bl', ':blast<CR>', { desc = 'Last buffer' })
+-- 如果到达最后一个buffer，自动回到第一个
+vim.cmd([[
+  function! CircularNext()
+    let bufnr = bufnr('%')
+    bnext
+    if bufnr == bufnr('%')
+      bfirst
+    endif
+  endfunction
+
+  function! CircularPrev()  
+    let bufnr = bufnr('%')
+    bprevious
+    if bufnr == bufnr('%')
+      blast
+    endif
+  endfunction
+]])
+
+vim.keymap.set('n', '<A-l>', ':call CircularNext()<CR>')
+vim.keymap.set('n', '<A-h>', ':call CircularPrev()<CR>')
