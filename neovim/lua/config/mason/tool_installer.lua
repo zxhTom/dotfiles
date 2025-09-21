@@ -31,6 +31,12 @@ require('mason-tool-installer').setup {
     'shfmt',
     'staticcheck',
     'vint',
+    -- Python LSP
+    'pyright',       -- 静态类型检查器，支持 Python 3.6+
+    'pylsp',         -- 官方 Python 语言服务器
+    'ruff-lsp',      -- 基于 Ruff 的 LSP（快速格式化 + Linter）
+      -- Java LSP
+    'jdtls',         -- Eclipse 的 Java 语言服务器（需额外配置 JDK 路径）   'jedi-language-server', -- 基于 Jedi 的补全引擎
   },
 
   -- if set to true this will check each tool for updates. If updates
