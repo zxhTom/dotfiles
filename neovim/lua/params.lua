@@ -24,10 +24,10 @@ toms = {
     ["lazygit"] = { enabled = true },
     ["leap"] = { enabled = true },
     ["lspconfig"] = { 
-      enabled = false ,
-      custom = false,
+      enabled = true ,
+      custom = true,
     },
-    ["lspsaga"] = { enabled = false },
+    ["lspsaga"] = { enabled = true },
     ["neogen"] = { enabled = true },
     ["nvim-gmove"] = { enabled = true },
     ["nvim-jdtl"] = { enabled = true },

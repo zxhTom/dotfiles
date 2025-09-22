@@ -94,6 +94,7 @@ history-substring-search
 zsh-syntax-highlighting
 wd
 zsh-vi-mode
+fzf-tab
 )
 
 source $ZSH/oh-my-zsh.sh
