@@ -43,4 +43,5 @@ export ZOOKEEPER_CLIENT_HOME=/opt/soft/client/zookeeper/
 export PATH=${ZOOKEEPER_CLIENT_HOME}/bin:${PATH}
 export SUDO_ASKPASS=/usr/bin/ksshaskpass
 export unline_path=/home/zxhtom/unline
+export PATH=/home/zxhtom/.local/share/nvim33/mason/bin/:$PATH
 source ${HOME}/.cargo/env
