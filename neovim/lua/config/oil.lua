@@ -133,6 +133,7 @@ require("oil").setup({
     border = "rounded",
     win_options = {
       winblend = 0,
+      winbar = "%{v:lua.require('oil').get_current_dir()}"
     },
     -- optionally override the oil buffers window title with custom function: fun(winid: integer): string
     get_win_title = nil,
@@ -140,6 +141,14 @@ require("oil").setup({
     preview_split = "auto",
     -- This is the config that will be passed to nvim_open_win.
     -- Change values here to customize the layout
+    -- 直接在这里设置标题函数
+    title = function()
+        local oil = require("oil")
+        local dir = oil.get_current_dir() or vim.fn.getcwd()
+        print(">>>>>"..dir)
+        return "📁 " .. dir
+    end,
+    -- title_pos = "left",
     override = function(conf)
       return conf
     end,

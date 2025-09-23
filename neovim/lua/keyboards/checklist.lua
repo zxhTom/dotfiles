@@ -12,6 +12,6 @@ function _G.toggle_checkbox()
 end
 
 -- 绑定快捷键
-vim.keymap.set("n", "<leader>tc", "<cmd>lua toggle_checkbox()<CR>", { desc = "Toggle checkbox" })
+vim.keymap.set("n", "<leader>tf", "<cmd>lua toggle_checkbox()<CR>", { desc = "Toggle checkbox" })
 -- 插入新检查项
 vim.keymap.set("n", "<leader>ic", "o- [ ] ", { desc = "Insert checklist item" })
