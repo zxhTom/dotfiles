@@ -7,6 +7,7 @@ _G.NVIM_INITIAL_PATH = vim.fn.expand("%:p:h")
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 vim.g.mapleader = " "
+vim.g.mapdotleader = ","
 
 -- 设置全局缩进为2个空格
 vim.opt.tabstop = 2 -- 1个Tab显示为2个空格
