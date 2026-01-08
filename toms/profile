@@ -44,4 +44,7 @@ export PATH=${ZOOKEEPER_CLIENT_HOME}/bin:${PATH}
 export SUDO_ASKPASS=/usr/bin/ksshaskpass
 export unline_path=/home/zxhtom/unline
 export PATH=${HOME}/.local/share/nvim33/mason/bin:${PATH}
+export GOOGLE_GENERATIVE_AI_API_KEY=AIzaSyCaHSeGc-887F8FsfFL_KSwmhZ_VVcKn30
+export NO_PROXY=localhost,127.0.0.1,::1
 source ${HOME}/.cargo/env
+
