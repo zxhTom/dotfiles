@@ -13,3 +13,5 @@ require("config.mason.lspconfig")
 require("config.mason.null-ls")
 
 require("config.mason.tool_installer")
+
+require("config.mason.vue")

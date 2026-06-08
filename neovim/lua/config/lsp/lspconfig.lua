@@ -88,7 +88,6 @@ if not mason_registry then
 	print("❌ Mason 未加载")
 	-- Config lsp servers here
 	if toms.plugins.lspconfig.custom then
-		print("lsp custom define")
 		local loader = require("utils.config_loader")
 		local files = loader.load_files("config.lsp.servers")
 		for _, file in ipairs(files) do
@@ -99,6 +98,7 @@ if not mason_registry then
 				config = vim.tbl_deep_extend("force", {
 					capabilities = capabilities,
 				}, config)
+        print("lsp custom define"..server_name)
 				lspconfig[server_name].setup(config)
 			end
 		end

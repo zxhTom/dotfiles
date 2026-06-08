@@ -8,6 +8,7 @@ null_ls.setup({
     null_ls.builtins.formatting.shfmt,     -- Shell
     null_ls.builtins.formatting.clang_format, -- C/C++
     null_ls.builtins.formatting.google_java_format, -- Java
+    require("typescript.extensions.null-ls.code-actions"), --ts
     
   },
   on_attach = function(client, bufnr)

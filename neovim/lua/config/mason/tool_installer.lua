@@ -4,7 +4,7 @@ require("mason-tool-installer").setup({
 	-- a list of all tools you want to ensure are installed upon
 	-- start
 	ensure_installed = {
-
+    "vue-language-server",
 		-- you can pin a tool to a particular version
 		{ "golangci-lint", version = "v1.47.0" },
 

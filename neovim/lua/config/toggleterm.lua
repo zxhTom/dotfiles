@@ -23,6 +23,11 @@ M.config = function()
 		-- direction = 'vertical' | 'horizontal' | 'window' | 'float',
 		direction = "float",
 		close_on_exit = true, -- close the terminal window when the process exits
+    on_open = function(term)
+        if term.direction == "float" then
+            vim.wo[term.window].winbar = string.format("[%d] %s", term.id, term.name)
+        end
+    end,
 		shell = vim.o.shell, -- change the default shell
 		-- This field is only relevant if direction is set to 'float'
 		float_opts = {
@@ -43,7 +48,7 @@ M.config = function()
 		winbar = {
 			enabled = true,
 			name_formatter = function(term) --  term: Terminal
-				return term.name
+       return string.format("[%d] %s", term.id, term.name)
 			end,
 		},
 		-- Add executables on the config.lua
