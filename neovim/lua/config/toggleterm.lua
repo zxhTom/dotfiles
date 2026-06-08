@@ -23,11 +23,12 @@ M.config = function()
 		-- direction = 'vertical' | 'horizontal' | 'window' | 'float',
 		direction = "float",
 		close_on_exit = true, -- close the terminal window when the process exits
-    on_open = function(term)
-        if term.direction == "float" then
-            vim.wo[term.window].winbar = string.format("[%d] %s", term.id, term.name)
-        end
-    end,
+		on_open = function(term)
+			if term.direction == "float" then
+				local value = string.format('%%{%%v:lua.require("toggleterm.ui").winbar(%d)%%}', term.id)
+				vim.wo[term.window].winbar = value
+			end
+		end,
 		shell = vim.o.shell, -- change the default shell
 		-- This field is only relevant if direction is set to 'float'
 		float_opts = {

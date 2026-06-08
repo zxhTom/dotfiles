@@ -1,10 +1,10 @@
 copilot = require("copilot")
 local function debug_log(msg)
   local log_file = vim.fn.stdpath("log") .. "/copilot-lua.log"
-  local fd = vim.loop.fs_open(log_file, "a", 438) -- 438 = 0o666
+  local fd = vim.uv.fs_open(log_file, "a", 438) -- 438 = 0o666
   if fd then
-    vim.loop.fs_write(fd, string.format("[DEBUG] %s\n", msg))
-    vim.loop.fs_close(fd)
+    vim.uv.fs_write(fd, string.format("[DEBUG] %s\n", msg))
+    vim.uv.fs_close(fd)
   end
 end
 

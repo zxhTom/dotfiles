@@ -83,7 +83,7 @@ vim.diagnostic.config({
 --
 local capabilities = cmp_nvim_lsp.default_capabilities()
 local mason_registry = require("mason-registry")
-local clients = vim.lsp.get_active_clients()
+local clients = vim.lsp.get_clients()
 if not mason_registry then
 	print("❌ Mason 未加载")
 	-- Config lsp servers here

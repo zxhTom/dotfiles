@@ -1,5 +1,5 @@
 require("ufo").setup({
-	close_fold_kinds = { "imports" }, -- 默认关闭 imports 折叠
+	close_fold_kinds_for_ft = { default = { "imports" } }, -- 默认关闭 imports 折叠
 	open_fold_hl_timeout = 400,
 	preview = {
 		win_config = {

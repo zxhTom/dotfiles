@@ -25,7 +25,7 @@ mason_lspconfig.setup({
   -- 如果这里没有列出，handlers 也不会被调用。
   ensure_installed = {
     "ts_ls",
-    "vue-language-server",
+    "vue_ls",
   },
   handlers = {
     -- 默认处理函数，用于未特殊配置的语言服务器

@@ -53,3 +53,21 @@ end, {})
 
 -- 设置快捷键来打开全屏终端
 vim.keymap.set('n', '<leader>ft', '<cmd>FloatTerm<CR>', {noremap = true, silent = true})
+
+-- next/prev terminal
+local function switch_terminal(offset)
+  local terms = require("toggleterm.terminal").get_all(true)
+  if #terms == 0 then return end
+  local cur_id = require("toggleterm.terminal").get_focused_id()
+  local cur_idx = 1
+  for i, t in ipairs(terms) do
+    if t.id == cur_id then cur_idx = i break end
+  end
+  local next_idx = ((cur_idx - 1 + offset) % #terms) + 1
+  local next_term = terms[next_idx]
+  if cur_id then require("toggleterm.terminal").get(cur_id):close() end
+  next_term:open()
+end
+
+vim.keymap.set({ 'n', 't' }, '<C-]>', function() switch_terminal(1) end, { noremap = true, silent = true, desc = "Next terminal" })
+vim.keymap.set({ 'n', 't' }, '<C-[>', function() switch_terminal(-1) end, { noremap = true, silent = true, desc = "Prev terminal" })
